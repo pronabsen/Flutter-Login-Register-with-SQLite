@@ -17,6 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
 
+  SharedPreferences sharedPreferences;
+
   static String name = '';
   static String email = '';
 
@@ -28,10 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
     getCredential();
   }
   getCredential() async {
-
+  sharedPreferences = await SharedPreferences.getInstance();
     setState(() {
-      name = SPHelper.getString("userName")!;
-      email = SPHelper.getString("userMail")!;
+      name = sharedPreferences.getString("userName")!;
+      email = sharedPreferences.getString("userMail")!;
 
     });
     print(name);
