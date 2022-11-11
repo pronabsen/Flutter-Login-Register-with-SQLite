@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
 
-  SharedPreferences sharedPreferences;
+  late SharedPreferences sharedPreferences;
 
   static String name = '';
   static String email = '';
